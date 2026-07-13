@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -208,7 +208,7 @@
 
             <a
               class="social-tile social-tile--scholar"
-              href="https://scholar.google.com/citations?hl=en&user=EmwiqIAAAAAJ"
+              href="https://scholar.google.com/citations?user=EmwiqIAAAAAJ&hl=en"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -235,6 +235,37 @@
       </div>
     </footer>
 
-    <script type="module" src="/src/main.js"></script>
+    <script type="module">
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      const yearEl = document.querySelector('#year');
+
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = navMenu.classList.toggle('is-open');
+          navToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+        navMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('is-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', (event) => {
+          const targetId = anchor.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+          const target = document.querySelector(targetId);
+          if (!target) return;
+          event.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.pushState(null, '', targetId);
+        });
+      });
+    </script>
   </body>
 </html>
