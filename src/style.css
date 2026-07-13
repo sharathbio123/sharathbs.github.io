@@ -407,9 +407,14 @@ p {
   margin-top: 0.15rem;
 }
 
+.prose {
+  max-width: 65ch;
+}
+
 .prose p {
-  text-align: justify;
-  hyphens: auto;
+  text-align: left;
+  hyphens: none;
+  text-wrap: pretty;
 }
 
 .prose p:last-child {
