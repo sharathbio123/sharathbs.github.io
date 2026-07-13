@@ -54,12 +54,3 @@ Upload photos to **`public/gallery/personal/`**:
 | `social.jpg` | Socializing |
 
 Edit captions or add slots in `index.html` (search for `gallery/personal`).
-
-### Local preview
-
-```bash
-npm install
-npm run dev
-```
-
-Open http://localhost:5173
