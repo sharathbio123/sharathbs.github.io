@@ -1,15 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Sharath B S">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f2a3d"/>
-      <stop offset="100%" stop-color="#1a4d5c"/>
+      <stop offset="0%" stop-color="#27272a"/>
+      <stop offset="100%" stop-color="#18181b"/>
     </linearGradient>
     <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3dd6c3"/>
-      <stop offset="100%" stop-color="#3b82f6"/>
+      <stop offset="0%" stop-color="#71717a"/>
+      <stop offset="50%" stop-color="#e4e4e7"/>
+      <stop offset="100%" stop-color="#52525b"/>
     </linearGradient>
   </defs>
   <rect width="400" height="400" fill="url(#bg)"/>
-  <circle cx="200" cy="200" r="88" fill="rgba(61,214,195,0.1)" stroke="url(#ring)" stroke-width="3"/>
-  <text x="200" y="218" text-anchor="middle" font-family="Georgia, serif" font-size="56" fill="#e8f0f7">SBS</text>
+  <circle cx="200" cy="200" r="88" fill="rgba(255,255,255,0.04)" stroke="url(#ring)" stroke-width="3"/>
+  <text x="200" y="218" text-anchor="middle" font-family="Georgia, serif" font-size="56" fill="#f4f4f5">SBS</text>
 </svg>
