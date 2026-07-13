@@ -37,21 +37,29 @@ The production build is written to `dist/`.
 
 ### Publish publicly (GitHub Pages)
 
-Your public URL: **https://sharathbs.github.io**
+**Important:** `https://sharathbs.github.io` only works when this repository is owned by the
+**`sharathbs`** GitHub account (repo: `sharathbs/sharathbs.github.io`). It is currently under
+**`sharathbio123`**, so GitHub will not publish it at that URL until you transfer ownership.
 
-**One-time setup (required):**
+#### Option A — Public URL `https://sharathbs.github.io` (recommended)
 
-1. Open https://github.com/sharathbio123/sharathbs.github.io/settings/pages
-2. Under **Build and deployment → Source**, choose **Deploy from a branch**
-3. Set **Branch** to `gh-pages` and folder to `/ (root)`
-4. Click **Save**
+1. Open https://github.com/sharathbio123/sharathbs.github.io/settings
+2. Scroll to **Danger Zone → Transfer ownership**
+3. Transfer to GitHub user **`sharathbs`** (your account that matches the desired URL)
+4. On the transferred repo: **Settings → Pages → Deploy from branch → `gh-pages` / (root) → Save**
+5. Wait 1–2 minutes, then open **https://sharathbs.github.io**
 
-The `gh-pages` branch already contains your built portfolio. After saving, the site is live within 1–2 minutes.
+The `gh-pages` branch already contains the built portfolio. Pushes to `main` auto-rebuild via
+GitHub Actions.
 
-On every future push to `main`, GitHub Actions rebuilds and updates `gh-pages` automatically.
+#### Option B — Keep repo on `sharathbio123` account
+
+1. Rename the repository to **`sharathbio123.github.io`** (Settings → General → Repository name)
+2. **Settings → Pages → Deploy from branch → `gh-pages` / (root) → Save**
+3. Public URL: **https://sharathbio123.github.io**
 
 > `npm run dev` (localhost:5173) is for development only — only you can see that link.
-> Share **https://sharathbs.github.io** with others.
+> Share your GitHub Pages URL (above) with others.
 
 ## Project structure
 
