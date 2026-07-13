@@ -184,6 +184,7 @@ p {
 
 .hero-panel {
   position: relative;
+  width: 100%;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -217,11 +218,12 @@ p {
 .hero-grid {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: clamp(1.25rem, 4vw, 2.5rem);
+  display: flex;
   align-items: center;
-  padding: clamp(1.75rem, 4vw, 2.75rem);
+  justify-content: space-between;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  width: 100%;
+  padding: clamp(2rem, 4vw, 3rem) clamp(2rem, 5vw, 3.5rem);
 }
 
 .hero-photo-col {
@@ -265,7 +267,17 @@ p {
 }
 
 .hero-copy {
+  flex: 1;
+  min-width: 0;
   text-shadow: 0 1px 18px rgba(0, 0, 0, 0.45);
+}
+
+.hero-copy .eyebrow,
+.hero-copy h1,
+.hero-copy .hero-role {
+  text-align: justify;
+  text-align-last: justify;
+  hyphens: auto;
 }
 
 .hero-copy h1 {
@@ -289,8 +301,8 @@ p {
 .hero-role {
   font-size: 1.12rem;
   color: var(--text-muted);
-  margin: 0 0 1.5rem;
-  max-width: 28rem;
+  margin: 0;
+  max-width: none;
 }
 
 .btn {
@@ -338,6 +350,11 @@ p {
 .section-lead {
   color: var(--text-muted);
   margin: 0 0 1.5rem;
+}
+
+.prose p {
+  text-align: justify;
+  hyphens: auto;
 }
 
 .prose p:last-child {
@@ -543,9 +560,16 @@ p {
 
 @media (max-width: 760px) {
   .hero-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     text-align: center;
-    justify-items: center;
+    justify-content: center;
+  }
+
+  .hero-copy .eyebrow,
+  .hero-copy h1,
+  .hero-copy .hero-role {
+    text-align: center;
+    text-align-last: center;
   }
 
   .hero-photo-col {
@@ -555,14 +579,6 @@ p {
   .hero-photo-frame {
     width: 132px;
     height: 132px;
-  }
-
-  .hero-role {
-    margin-inline: auto;
-  }
-
-  .btn {
-    margin-inline: auto;
   }
 
   .social-tiles {
